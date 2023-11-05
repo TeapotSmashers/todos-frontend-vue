@@ -1,4 +1,17 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true }
-})
+  devtools: { enabled: true },
+  css: ["~/assets/css/main.css"],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  modules: ["@nuxtjs/supabase"],
+  runtimeConfig: {
+    public: {
+      backendUrl: "https://todos-backend.sankalpmukim.dev",
+    },
+  },
+});
